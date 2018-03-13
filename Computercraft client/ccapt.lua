@@ -132,8 +132,9 @@ if #args < 1 or args[1] == "help" then
 elseif args[1] == "add-server" and #args == 2 then
 	local lists = readAptSourceLists({aptList})
 	if not args[2]:match(linkPattern) then
-		print("'"..args[2].."' is not a valid url")
-	elseif lists[args[2]] ~= nil and lists[args[2]][aptList] == true then
+		args[2] = "http://"..args[2]
+ end
+	if lists[args[2]] ~= nil and lists[args[2]][aptList] == true then
 		print("Already added")
 	else
 		local aptSrcFile = fs.open(aptList,"a")
