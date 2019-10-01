@@ -3,7 +3,7 @@ local currentProg = shell.getRunningProgram():sub(shell.dir():len() + 1, -5 )
 local aptListDir = "/.ccapt/sources.list.d"
 local aptList = "/.ccapt/sources.list"
 local linkPattern = "^http"
-local parameters = { "install", "remove", "upgrade", "add-server", "remove-server" }
+local parameters = { "install", "remove", "upgrade", "add-server", "remove-server", "list" }
 
 local function capLine(line, width)
 	if not width then
@@ -100,7 +100,7 @@ shell.setCompletionFunction(shell.getRunningProgram(), function(shell, parNumber
 		return {}
 	elseif #prevParams == 1 then
 		nextParam = parameters
-	elseif #prevParams == 2 and prevParams[2] == "remove-server" then
+	elseif #prevParams == 2 and prevParams[2] == parameters[#parameters] then
 		nextParam = {}
 		for src, _ in pairs(readAptSourceLists({aptList})) do
 			table.insert(nextParam, src)
@@ -127,6 +127,7 @@ if #args < 1 or args[1] == "help" then
 	helpLine(lines, "upgrade [programname]","upgrades all installed programes or a specific program (if installed).")
 	helpLine(lines, "add-server <serveradress>","adds a server to your Serverlist.")
 	helpLine(lines, "remove-server <serveradress>","removes a server from your Serverlist.")
+	helpLine(lines, "list [serveradress]","list all available packages from standard servers, or from a specified server.")
 	downScroll(lines)
 
 elseif args[1] == "add-server" and #args == 2 then
