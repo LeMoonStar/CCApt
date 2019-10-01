@@ -1,0 +1,14 @@
+{
+    "desc":"Just another test packet",
+    "files":[
+        {
+            "source":"f1",
+            "dest":"/test1"
+        },
+        {
+            "source":"f2",
+            "dest":"/test2"
+        }
+    ],
+    "afterInstall":"shell.run(\"/test1\") shell.run(\"/test2\")"
+}

@@ -1,0 +1,6 @@
+{
+    "desc":"Just another test server",
+    "packages":[
+        "TestPacket"
+    ]
+}
