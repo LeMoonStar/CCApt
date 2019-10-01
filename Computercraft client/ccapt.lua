@@ -1,5 +1,5 @@
 local args = {...}
-local currentProg = shell.getRunningProgram():sub(shell.dir():len() + 2, -5 )
+local currentProg = shell.getRunningProgram():sub(shell.dir():len() + 1, -5 )
 local aptListDir = "/.ccapt/sources.list.d"
 local aptList = "/.ccapt/sources.list"
 local linkPattern = "^http"
@@ -54,7 +54,7 @@ local function downScroll(lines)
 	
 	
 		local ev, char = os.pullEvent("char")
-		if char:lower() == "q" then
+		if string.lower(char) == "q" then
 			term.clearLine()
 			doScroll = false
 		else
@@ -132,8 +132,8 @@ if #args < 1 or args[1] == "help" then
 elseif args[1] == "add-server" and #args == 2 then
 	local lists = readAptSourceLists({aptList})
 	if not args[2]:match(linkPattern) then
-		args[2] = "http://"..args[2]
- end
+        args[2] = "http://"..args[2]
+    end
 	if lists[args[2]] ~= nil and lists[args[2]][aptList] == true then
 		print("Already added")
 	else
@@ -144,6 +144,9 @@ elseif args[1] == "add-server" and #args == 2 then
 	end
 
 elseif args[1] == "remove-server" and #args == 2 then
+    if not args[2]:match(linkPattern) then
+        args[2] = "http://"..args[2]
+    end
 	local lists = readAptSourceLists()
 	if lists[args[2]] == nil then
 		print("Not found in 'sources.list'")
