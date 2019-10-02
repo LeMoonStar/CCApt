@@ -1,5 +1,12 @@
 {
     "desc":"Just another test packet",
+    "ver":1,
+    "depend":[
+        "localpackage",
+        "extern:package"
+    ],
+    "beforeinstall":"print(\"some Script to run before Install\")",
+    "afterinstall":"print(\"some Script to run after Install\")",
     "files":[
         {
             "source":"f1",
@@ -9,6 +16,5 @@
             "source":"f2",
             "dest":"/test2"
         }
-    ],
-    "afterInstall":"shell.run(\"/test1\") shell.run(\"/test2\")"
+    ]
 }
