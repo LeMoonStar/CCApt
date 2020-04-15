@@ -1,0 +1,1 @@
+print("This will be executes before the installation of the package")

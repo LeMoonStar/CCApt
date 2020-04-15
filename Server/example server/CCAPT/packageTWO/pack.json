@@ -1,0 +1,13 @@
+{
+    "description": "Just a random example Program",
+    "version": 1,
+    "dependencies": {
+        "packageONE": {
+            "minVersion": 1,
+            "maxVersion": -1
+        }
+    },
+    "files": {
+        "someFile.lua": "programONE.lua"
+    }
+}

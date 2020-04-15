@@ -1,6 +1,6 @@
-The sever is purely file based, however you will need an HTTP server to host a CCApt server.
+The server is purely file-based, but you need an HTTP(S) server to host a CCApt server.
 
-if you want to know how you can create a CCApt server read the Wiki:
-See in wiki:<br/>
-[CCApt-Server(english)](https://github.com/LeMoonStar/CCApt/wiki/Server-english)<br/>
+If you want to know how to create a CCApt server, read the Wiki:
+See the Wiki:   
+[CCApt-Server(english)](https://github.com/LeMoonStar/CCApt/wiki/Server-english)   
 [CCApt-Server(German(Deutsch))](https://github.com/LeMoonStar/CCApt/wiki/Server-German)

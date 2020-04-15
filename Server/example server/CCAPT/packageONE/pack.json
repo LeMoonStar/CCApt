@@ -1,0 +1,10 @@
+{
+    "description": "Just a random example Program",
+    "version": 1,
+    "dependencies": {
+
+    },
+    "files": {
+        "someFile.lua": "libONE.lua"
+    }
+}
