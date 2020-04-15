@@ -2,8 +2,6 @@
 
 
 # CCApt
-CCAPt is an system for computercraft thats adds a package maneger to computercraft.
-it is still in progress so it dosnt work at the moment!
+CCApt is a package manager for ComputerCraft, inspired by [APT (Advanced Package Manager)](https://en.wikipedia.org/wiki/APT_(software)) for debian-based systems.
 
-
-[TODO]
+Its packet servers are just a simple file structure hosted over HTTP(S). Everyone is free to create their own packet servers and distribute their packets over them.
